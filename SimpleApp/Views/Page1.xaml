@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:SimpleApp.ViewModels" 
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:DataType="vm:Page1VM"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="SimpleApp.Views.Page1">
+
+    <ContentPage.BindingContext>
+        <vm:Page1VM/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid RowDefinitions="*">
+            <skia:SKCanvasView x:Name="canvasview" PaintSurface="Canvasview_PaintSurface"/>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,30">
+                <Label Text="Developed With SkiaSharp!" FontSize="20" 
+                       TextColor="WhiteSmoke" FontAttributes="Bold" Margin="0,0,0,5"/>
+                <Label x:Name="dateLabel" FontSize="Large" FontAttributes="Bold" 
+                   TextColor="WhiteSmoke" HorizontalOptions="Center" VerticalOptions="End"/>
+                <Button Text="Load Page_2" BackgroundColor="Transparent" TextTransform="None" 
+                    Command="{Binding LoadPg2Cmd}" TextColor="WhiteSmoke"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

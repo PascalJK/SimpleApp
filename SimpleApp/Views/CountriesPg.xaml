@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:SimpleApp.ViewModels" 
+             xmlns:model="clr-namespace:SimpleApp.Models" 
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:DataType="vm:CountriesVM"
+             x:Class="SimpleApp.Views.CountriesPg"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Beige">
+            <Label Text="My Countries Page" FontSize="20" FontAttributes="Bold,Italic" 
+                   Padding="10,5,10,0"/>
+            <CollectionView ItemsSource="{Binding CountriesCollection}" Margin="7,0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="5" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Country">
+                        <Frame Padding="10" CornerRadius="5" BackgroundColor="DarkOrange">
+                            <Grid RowDefinitions="auto" ColumnDefinitions="auto, *">
+                                <Frame Padding="5" CornerRadius="5" OutlineColor="WhiteSmoke"
+                                       BackgroundColor="SlateGray" VerticalOptions="Center">
+                                    <ffimageloadingsvg:SvgCachedImage 
+                                        WidthRequest="85" HeightRequest="60" 
+                                        Source="{Binding Flag}"/>
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Name, StringFormat='Country: {0}'}"
+                                           FontSize="13" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Region, StringFormat='Region: {0}'}"
+                                           FontSize="11" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Capital, StringFormat='Capital: {0}'}"
+                                           FontSize="10" FontAttributes="Bold,Italic"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="SimpleApp.Views.ContentViews.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="White"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackLayout
+                Margin="0,0,0,0"
+                Padding="{OnPlatform Android='10, 15',
+                                     iOS='10, 40, 10, 15'}"
+                BackgroundColor="OrangeRed"
+                Orientation="Horizontal"
+                Spacing="15">
+                <Image Source="menu" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnMenuTapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="22"
+                    Text="My Flyout Page"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+        </Grid>
+
+        <StackLayout Grid.Row="1">
+            <Label
+                FontSize="18" FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                Text="This is a testing field of something bigger!"
+                VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </Grid>
+
+</ContentView>

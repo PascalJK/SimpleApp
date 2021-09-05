@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="SimpleApp.Views.ContentViews.MenuPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:vm="clr-namespace:SimpleApp.ViewModels" 
+    x:DataType="vm:MainPgVM"
+    BackgroundColor="SkyBlue"
+    x:Name="menupg">
+
+    <ContentView.BindingContext>
+        <vm:MainPgVM/>
+    </ContentView.BindingContext>
+    
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" Padding="{OnPlatform Android='50, 25', iOS='50, 50, 50, 25'}">
+            <Label
+                FontSize="30" HorizontalOptions="CenterAndExpand"
+                Text="Fancy Menu"
+                TextColor="White" />
+            <BoxView
+                BackgroundColor="White"
+                HeightRequest="1"
+                HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Padding="10,0,10,25">
+            <Label Text="This is the fancy menu where youc an customize your control just like any page. I prefer to place header or profile content above the buttons, which is what this space is designed for." />
+        </StackLayout>
+
+        <Grid
+            Grid.Row="2" Padding="25,0,25,25"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ScrollView>
+                <StackLayout 
+                    Grid.Row="0" Spacing="15"
+                    VerticalOptions="CenterAndExpand"
+                    BindableLayout.ItemsSource="{Binding MenuTabsColl}">
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <Style TargetType="Frame">
+                                <Setter Property="BackgroundColor" Value="Lavender" />
+                                <Setter Property="OutlineColor" Value="Transparent"/>
+                                <Setter Property="CornerRadius" Value="10" />
+                                <Setter Property="Padding" Value="15, 10" />
+                            </Style>
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="vm:MainPgModel">
+                            <Frame>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        Command="{Binding Source={x:Reference menupg}, Path=BindingContext.LoadPageCmd}"
+                                        CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                                <Label Text="{Binding PageTitle}" />
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout Grid.Row="1" VerticalOptions="EndAndExpand">
+                <Label Text="Design Insipired by Andrew Hoefling" />
+                <Label Text="Open Source Software" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+
+</ContentView>
