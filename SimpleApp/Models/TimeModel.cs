@@ -4,6 +4,7 @@ namespace SimpleApp.Models
 {
     public class TimeModel
     {
+        // Find Fix
         [JsonProperty("$id")]
         public long Id { get; set; }
 
