@@ -12,7 +12,7 @@ internal class Test
         return sum;
     }
 
-    public static void AddNames(params string[] names)
+    public static void Names(params string[] names)
     {
         int count = 0;
         foreach (var name in names)
