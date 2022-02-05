@@ -38,5 +38,5 @@ Console.WriteLine(numbers);
 Console.WriteLine(nums);
 
 // Playing
-Test.Names("Pascal", "Jhon", "Liz", "James", "Sharon", "DizzyTree");
+Test.AddNames("Pascal", "Jhon", "Liz", "James", "Sharon", "DizzyTree");
 Console.ReadKey();
