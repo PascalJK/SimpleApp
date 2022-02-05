@@ -1,9 +1,4 @@
 ﻿using SimpleApp.ViewModels.Base;
-using System;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
 
 namespace SimpleApp.ViewModels
 {

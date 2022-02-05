@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:htmlLabel="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BackgroundColor="White"
     mc:Ignorable="d">
@@ -37,11 +38,15 @@
         </Grid>
 
         <StackLayout Grid.Row="1">
+            <htmlLabel:HtmlLabel x:Name="htmlLbl" TextColor="Black" 
+                                 FontSize="Body" LinkColor="DodgerBlue" UnderlineText="True"
+                                  Padding="20"/>
             <Label
-                FontSize="18" FontAttributes="Bold"
+                FontAttributes="Bold"
+                FontSize="18"
                 HorizontalTextAlignment="Center"
                 Text="This is a testing field of something bigger!"
-                VerticalOptions="CenterAndExpand"/>
+                VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </Grid>
 
