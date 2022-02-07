@@ -1,4 +1,4 @@
-﻿using SimpleConsole;
+﻿using SimpleApp.Console;
 
 var orderProcessor = new OrderProcessor(new ShippingCalculator());
 var order = new Order();

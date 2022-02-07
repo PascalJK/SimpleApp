@@ -1,4 +1,4 @@
-﻿namespace SimpleConsole;
+﻿namespace SimpleApp.Console;
 
 public class ShippingCalculator : IShippingCalculator
 {

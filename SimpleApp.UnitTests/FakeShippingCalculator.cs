@@ -1,4 +1,4 @@
-﻿using SimpleConsole;
+﻿using SimpleApp.Console;
 
 namespace SimpleApp.UnitTests;
 

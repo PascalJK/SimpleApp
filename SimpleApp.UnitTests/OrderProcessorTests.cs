@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SimpleConsole;
+using SimpleApp.Console;
 
 namespace SimpleApp.UnitTests;
 [TestClass]
