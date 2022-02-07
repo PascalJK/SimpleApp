@@ -1,6 +1,6 @@
 ﻿namespace SimpleConsole;
 
-public class Person
+public class Person : Base
 {
     private readonly List<string> Interests = new();
 
@@ -19,9 +19,10 @@ public class Person
     }
 
 
-    public Person(DateTime birthDate)
+    public Person(DateTime birthDate) : base("Pascal", 23)
     {
         BirthDate = birthDate;
+        Console.WriteLine("Person ctor\n");
     }
 
     // Take note cannot reInit readonly field.
