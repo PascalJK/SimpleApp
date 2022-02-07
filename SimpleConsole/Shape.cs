@@ -6,5 +6,5 @@ public class Shape
     public int Height { get; set; }
     public Position Position { get; set; }
 
-    public virtual void Draw() => Console.WriteLine("Default Draw");
+    public virtual void Draw() => throw new NotImplementedException();
 }
