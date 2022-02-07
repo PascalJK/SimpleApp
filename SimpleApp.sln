@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp.iOS", "SimpleApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp", "SimpleApp\SimpleApp.csproj", "{50C402FF-6B5F-4218-AA62-00A566A361E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleConsole", "SimpleConsole\SimpleConsole.csproj", "{930CB903-E7CA-4F24-A0C0-883E1E23AA1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp.Console", "SimpleConsole\SimpleApp.Console.csproj", "{930CB903-E7CA-4F24-A0C0-883E1E23AA1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp.UnitTests", "SimpleApp.UnitTests\SimpleApp.UnitTests.csproj", "{087E1576-059E-4EC4-B8AA-0FB76D61A3B5}"
 EndProject
