@@ -1,6 +1,5 @@
 ﻿namespace SimpleConsole;
 
-public enum ShapeType
+public class ShapeType
 {
-    Circle, Rectangle, Triangle
 }
