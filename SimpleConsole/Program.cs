@@ -1,5 +1,6 @@
 ﻿using SimpleApp.Console;
 
-var orderProcessor = new OrderProcessor(new ShippingCalculator());
-var order = new Order();
-orderProcessor.Process(order);
+string path = @"C:\Users\Pascal\Documents\Xamarin Work\SimpleApp\Logger.log";
+//var migrator = new DbMigrator(new ConsoleLogger());
+var migrator = new DbMigrator(new FileLogger(path));
+migrator.Migrate();
