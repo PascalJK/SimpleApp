@@ -1,10 +1,4 @@
-﻿using Newtonsoft.Json;
-using SimpleApp.Models;
-using SimpleApp.ViewModels.Base;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Xamarin.CommunityToolkit.ObjectModel;
+﻿using SimpleApp.ViewModels.Base;
 
 namespace SimpleApp.ViewModels
 {

@@ -1,6 +1,16 @@
-﻿using SimpleApp.Console;
+﻿/*using SimpleApp.Helper;
+using SimpleApp.Models;
 
-string path = @"C:\Users\Pascal\Documents\Xamarin Work\SimpleApp\Logger.log";
-//var migrator = new DbMigrator(new ConsoleLogger());
-var migrator = new DbMigrator(new FileLogger(path));
-migrator.Migrate();
+var httpClient = new HttpClient();
+//HttpResponseMessage response = await httpClient.GetAsync(ApiUrls._recentEpisodesUrl);
+HttpResponseMessage response = await httpClient.GetAsync(ApiUrls.GetAnimeInfoById("48997"));
+var json = await response.Content.ReadAsStringAsync();
+
+*//*IEnumerable<Root> countriesList = JsonConvert.DeserializeObject<IEnumerable<Root>>(json);
+foreach (var item in countriesList)
+{
+
+}*//*
+Root animeInfo = ApiUrls.DeserializeRootJson(json);
+Console.WriteLine(animeInfo.Data.Title);
+Console.ReadKey();*/

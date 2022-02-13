@@ -1,11 +1,7 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
-using FFImageLoading.Forms.Platform;
-using LabelHtml.Forms.Plugin.Droid;
 
 namespace SimpleApp.Droid
 {
@@ -15,11 +11,8 @@ namespace SimpleApp.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            HtmlLabelRenderer.Initialize();
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            CachedImageRenderer.Init(true);
-            Xamarin.Forms.Svg.Droid.SvgImage.Init(this);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

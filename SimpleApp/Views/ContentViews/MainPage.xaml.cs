@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms.Xaml;
 
 namespace SimpleApp.Views.ContentViews
 {
@@ -10,7 +8,6 @@ namespace SimpleApp.Views.ContentViews
         public MainPage()
         {
             InitializeComponent();
-            htmlLbl.Text = "Use this Xamarin.Forms plugin to display HTML content into a label https://github.com/matteobortolazzo/HtmlLabelPlugin Look it up. +268 1879 2222";
         }
 
         // Used to call from the flyoutPg.cs go chk
