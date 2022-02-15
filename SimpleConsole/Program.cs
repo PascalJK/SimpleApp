@@ -1,6 +1,13 @@
 ﻿using SimpleApp.Console;
 
-string path = @"C:\Users\Pascal\Documents\Xamarin Work\SimpleApp\Logger.log";
-//var migrator = new DbMigrator(new ConsoleLogger());
-var migrator = new DbMigrator(new FileLogger(path));
-migrator.Migrate();
+var video = new Video() { Title = "Joker" };
+var videoEncoder = new VideoEncoder();
+var messageService = new MessageService();
+var mailService = new MailService();
+
+videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
+videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
+videoEncoder.VideoEncoding += messageService.OnVideoEncoding;
+videoEncoder.VideoEncoding += mailService.OnVideoEncoding;
+
+videoEncoder.Encode(video);
